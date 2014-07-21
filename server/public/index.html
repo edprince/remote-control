@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  	<link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+  	<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <title>remote-control</title>
+    <style type="text/css">
+      .btn {
+      	border: none;
+        background-color:#eee;
+        width:50px;
+        height:30px;
+        font-family: Ubuntu;
+        text-align: center;
+        border-radius:7px;	
+        border-bottom: solid 5px #ccc;
+        color: #666;
+        position: relative;
+        outline: none;
+        -webkit-user-select: none;
+      }
+
+      .btn:hover {
+         color: #999;
+         cursor: pointer;
+     }
+
+     .btn:active {
+     	border-bottom-width: 2px;
+     	top: 3px;
+     }
+
+     table, tr, td {
+     	-webkit-user-select:none;
+     }
+    
+    </style>
+
+    <script>
+      function send(direction) {
+        $.get('http://188.226.190.121/direction/' + direction, function() {
+        	console.log("Success");
+        }) 
+      }
+      $(document).ready(function(){
+         $('#up').on("click", function() {
+           send("up");
+         });
+         $('#left').on("click", function() {
+           send("left");
+         });
+         $('#right').on("click", function() {
+           send("right");
+         });
+         $('#down').on("click", function() {
+           send("down");
+         });
+      });
+      console.log("second");
+    </script>
+  </head>
+
+ <body>
+   <table align="center">
+     <tr>
+     	<td></td>
+     	<td>
+          <button class="btn" id="up">
+            <i class="fa fa-arrow-up"></i>
+     	  </button>
+        </td>
+     	<td></td>
+     </tr>
+     <tr>
+     	<td>
+          <button class="btn" id="left">
+            <i class="fa fa-arrow-left"></i>
+     	  </button>
+        </td>
+        <td></td>
+        <td>
+          <button class="btn" id="right">
+            <i class="fa fa-arrow-right"></i>
+     	  </button>
+        </td>
+     </tr>
+     <tr>
+     	<td></td>
+     	<td>
+          <button class="btn" id="down">
+            <i class="fa fa-arrow-down"></i>
+     	  </button>
+        </td>
+     	<td></td>
+     </tr>
+   </table>
+ </body>
+</html>
