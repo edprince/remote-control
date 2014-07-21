@@ -1,0 +1,17 @@
+{
+  "name": "remote-control",
+  "version": "0.0.0",
+  "description": "remote-control ==============",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/edprince/remote-control.git"
+  },
+  "author": "Ed Prince",
+  "license": "MIT",
+  "readmeFilename": "README.md",
+  "gitHead": "c4902b2f4609dfed43d8ba853a776119b1d16d1e"
+}
